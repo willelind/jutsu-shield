@@ -1,0 +1,8 @@
+file_format: "1"
+id: jutsu
+name: JUTSU
+type: shield
+url: https://github.com/willelind/jutsu
+requires: [nice_nano_v2]
+features:
+  - keys
