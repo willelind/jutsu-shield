@@ -1,6 +1,6 @@
 if SHIELD_JUTSU
 
 config ZMK_KEYBOARD_NAME
-	default "jutsu"
+	default "Jutsu"
 
 endif
