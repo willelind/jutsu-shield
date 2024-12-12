@@ -6,3 +6,4 @@ url: https://github.com/willelind/jutsu-shield
 requires: [nice_nano_v2]
 features:
   - keys
+  - pointer
