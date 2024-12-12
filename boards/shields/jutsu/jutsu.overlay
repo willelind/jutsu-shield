@@ -16,21 +16,6 @@
      };
 };
 
-&i2c1 {
-    compatible = "nordic,nrf-twim";
-    status = "okay";
-    pinctrl-0 = <&i2c1_default>;
-    pinctrl-1 = <&i2c1_sleep>;
-    pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_FAST>;
-    trackpad: trackpad@2c {
-        compatible = "cirque,gen4";
-        status = "okay";
-        reg = <0x2C>;
-        dr-gpios = <&pro_micro 5 (GPIO_ACTIVE_LOW)>;
-    };
-};
-
 / {
     chosen {
         zmk,kscan = &kscan0;
@@ -74,5 +59,20 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(2,6) RC(2,7) RC(2,8) RC(2,9) 
             , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
+    };
+
+    &i2c1 {
+        compatible = "nordic,nrf-twim";
+        status = "okay";
+        pinctrl-0 = <&i2c1_default>;
+        pinctrl-1 = <&i2c1_sleep>;
+        pinctrl-names = "default", "sleep";
+        clock-frequency = <I2C_BITRATE_FAST>;
+        trackpad: trackpad@2c {
+            compatible = "cirque,gen4";
+            status = "okay";
+            reg = <0x2C>;
+            dr-gpios = <&pro_micro 5 (GPIO_ACTIVE_LOW)>;
+        };
     };
 };
